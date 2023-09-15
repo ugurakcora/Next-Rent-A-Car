@@ -11,7 +11,7 @@ import Image from "next/image";
 import { Link } from "react-scroll";
 
 // Components
-import { SearchMobile } from "./SearchMobile";
+import SearchMobile from "@/app/components/SearchMobile";
 
 // Media Query Hook
 import { useMediaQuery } from "react-responsive";
@@ -19,7 +19,11 @@ import { useMediaQuery } from "react-responsive";
 // Icons
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 
+// Context
+import { useSearchContext } from "../context/search";
+
 const Header = () => {
+  const { setSearchActive } = useSearchContext();
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -35,6 +39,13 @@ const Header = () => {
         setHeader(true);
       } else {
         setHeader(false);
+      }
+
+      // Search
+      if (window.scrollY > 800) {
+        setSearchActive(true);
+      } else {
+        setSearchActive(false);
       }
     };
 
@@ -151,6 +162,7 @@ const Header = () => {
           >
             See all cards
           </Link>
+          <SearchMobile />
         </nav>
       </div>
     </header>
