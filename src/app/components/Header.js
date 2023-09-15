@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { useContext, useEffect, useState } from "react";
 
 // Next Image
@@ -17,7 +19,7 @@ import { useMediaQuery } from "react-responsive";
 // Icons
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 
-export default function Header() {
+const Header = () => {
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -76,30 +78,83 @@ export default function Header() {
               <BiMenuAltRight className="text-4xl" />
             )}
           </div>
-
-          {/* Nav */}
-          <nav className="hidden xl:flex items-center space-x-8">
-            <Link
-              to="home"
-              smooth={desktopMode}
-              spy={true}
-              activeClass="active"
-              className="cursor-pointer"
-            >
-              Home
-            </Link>
-            <Link
-              to="cars"
-              smooth={desktopMode}
-              spy={true}
-              activeClass="active"
-              className="cursor-pointer"
-            >
-              Cars
-            </Link>
-          </nav>
         </div>
+        {/* Nav */}
+        <nav
+          className={`${
+            nav ? "max-h-max py-8 px-4 xl:py-0 xl:px-0" : "max-h-0 xl:max-h-max"
+          } flex flex-col w-full bg-white gap-y-6 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent xl:pb-0 transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[15px] xl:normal-case`}
+        >
+          <Link
+            to="home"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            Home
+          </Link>
+          <Link
+            to="cars"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            Cars
+          </Link>
+          <Link
+            to="about"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            About
+          </Link>
+          <Link
+            to="why"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            Why Us
+          </Link>
+          <Link
+            to="testimonials"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            Testimonials
+          </Link>
+          <Link
+            to="contact"
+            smooth={desktopMode}
+            spy={true}
+            activeClass="active"
+            className="cursor-pointer"
+          >
+            Contact
+          </Link>
+          <Link
+            onClick={() => setNav(!nav)}
+            className="
+                    xl:hidden btn btn-primary btn-sm max-w-[164px] mx-auto
+                    "
+            to="home"
+            activeClass="active"
+            smooth={desktopMode}
+            spy={true}
+          >
+            See all cards
+          </Link>
+        </nav>
       </div>
     </header>
   );
-}
+};
+
+export default Header;
