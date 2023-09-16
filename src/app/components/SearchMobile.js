@@ -1,22 +1,23 @@
-// Componets
+// component
+import React from "react";
 import DateSelection from "./DateSelection";
 import HoursSelection from "./HoursSelection";
 import LocationSelection from "./LocationSelection";
 
-export default function SearchMobile() {
+const SearchMobile = () => {
   return (
-    <div className="xl:hidden font-medium">
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-y-4">
-          {/* Location */}
+    <div className={`xl:hidden font-medium`}>
+      <div className={`container mx-auto`}>
+        <div className={`flex flex-col gap-y-4`}>
+          {/* location selection*/}
           <LocationSelection />
-          {/* Date */}
+          {/* date selection*/}
           <DateSelection />
-          {/* Hours */}
+          {/* hour selection*/}
           <HoursSelection />
-          {/* Button */}
-          <div className="flex items-center px-6">
-            <button className="btn btn-accent btn-sm w-[164px] mx-auto">
+          {/*btn*/}
+          <div className={`flex items-center px-6`}>
+            <button className={`btn btn-sm btn-accent w-[164px] mx-auto`}>
               Search
             </button>
           </div>
@@ -24,4 +25,6 @@ export default function SearchMobile() {
       </div>
     </div>
   );
-}
+};
+
+export default SearchMobile;
