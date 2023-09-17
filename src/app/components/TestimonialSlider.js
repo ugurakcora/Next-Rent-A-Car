@@ -15,14 +15,14 @@ const testimonialData = [
   {
     message:
       "They truly exceeded my expectations and made my car rental experience a delight",
-    avatar: "/public/images/testimonial/avatar.png",
+    avatar: "/images/testimonial/avatar.png",
     name: "John Son",
     job: "Photographer & Videographer",
   }, //
   {
     message:
       "They truly exceeded my expectations and made my car rental experience a delight",
-    avatar: "/public/images/testimonial/avatar.png",
+    avatar: "/images/testimonial/avatar.png",
 
     name: "Thuy Tien",
     job: "Singer & Actor",
