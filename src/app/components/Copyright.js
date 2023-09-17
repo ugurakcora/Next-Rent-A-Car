@@ -6,7 +6,7 @@ const Copyright = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center border-t w-full shadow-sm max-h-[360px]">
       <a href="https://ugurakcora.vercel.app/" target="_blank">
-        <div className="flex flex-row justify-center items-center w-full max-h-120 place-items-center mr-8">
+        <div className="flex flex-row justify-center items-center w-full max-h-120 place-items-center mr-8 py-[20px]">
           <h3 className="h3 font-medium text-secondary mr-2 text-center justify-center items-center my-auto">
             Author:{" "}
           </h3>
